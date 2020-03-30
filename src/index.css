@@ -1,0 +1,193 @@
+body {
+  margin: 10px;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input {
+  outline: none !important;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid rgb(197, 69, 133);
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 4px 5px;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  background-color:rgb(197, 69, 133);
+  padding: 5px 10px;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: #999999;
+}
+
+.inprogress {
+  font-weight: bold;
+}
+
+.inprogress .task {
+  position: relative;
+  padding-right: 29px;
+}
+
+.task:before {
+  content: '\2022';
+}
+
+.inprogress .task:before {
+  content: '';
+  display: inline-block;
+  background-image: url('./loader.gif');
+  width: 10px !important;
+  height: 10px !important;
+  background-size: contain;
+}
+
+.completed .task:before {
+  content: '\2022';
+  background-image: none;
+}
+
+#root ul {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  list-style: none;
+  padding-left: 10px;
+}
+
+#root li > div {
+  display: flex;
+  min-height: 25.5px;
+}
+
+#root li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+button.progress_btn {
+  text-transform: none;
+  font-weight: 100;
+  position: relative;
+  background-color: rgb(230, 103, 0);
+}
+
+button.progress_btn:hover {
+  background-color: #999999;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #333;
+}
+
+
+.inprogress .progress_btn {
+  width: 80px;
+  height: 25.5px;
+  overflow: hidden;
+
+}
+
+.inprogress .progress_btn:after {
+  content: 'Active';
+  background-color: rgb(230, 103, 0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: .3s;
+
+} 
+
+.inprogress .progress_btn:hover:after {
+  background-color: #999999;
+}
+
+.completed .progress_btn {
+  display: none;
+}
+
+.completed .task:after {
+  content: none;
+}
+
+.completed .task {
+  font-weight: 400;
+}
+
+.task {
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+
+.remove .task {
+  position: relative;
+  padding-right: 29px;
+}
+
+
+button.remove_btn {
+  text-transform: none;
+  font-weight: 100;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  background-color: #b60000;
+}
+
+button.remove_btn:hover {
+  background-color: #999999;
+}
+
+
+
+.remove .remove_btn {
+  width: 80px;
+  height: 25.5px;
+  overflow: hidden;
+
+}
+
+.remove .remove_btn:after {
+  content: 'Restore';
+  background-color: #b60000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: .3s;
+
+} 
+
+.remove .remove_btn:hover:after {
+  background-color: #999999;
+}
+
+.main-p {
+  font-size: 10px;
+  margin-top: 5px;
+}
